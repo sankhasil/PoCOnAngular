@@ -13,7 +13,7 @@ import { ItemService } from './item.service';
 export class ItemResolver implements Resolve<any> {
   constructor(private itemService:ItemService){}
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> {
-    debugger;
+    // debugger;
     return this.itemService.getItem(parseInt(route.params['itemId']));
   }
 }

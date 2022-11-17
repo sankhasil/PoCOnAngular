@@ -1,3 +1,8 @@
+<button><a [routerLink]="['create']" routerLinkActive="router-link-active">Create</a></button>
 <ul>
-  <li *ngFor="let item of items"><a [routerLink]="item.id.toString()" routerLinkActive="router-link-active" >{{item.label}}</a></li>
+  <li *ngFor="let item of items"><a [routerLink]="[item.id,'view']" routerLinkActive="router-link-active" >{{item.label}}</a>
+    <button><a [routerLink]="[item.id,'edit']" routerLinkActive="router-link-active">Edit</a></button>
+    <button><a [routerLink]="[item.id,'delete']" routerLinkActive="router-link-active">Delete</a></button>
+    </li>
 </ul>
+<router-outlet></router-outlet>

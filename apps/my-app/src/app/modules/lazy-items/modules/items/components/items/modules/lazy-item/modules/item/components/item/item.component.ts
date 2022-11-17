@@ -9,10 +9,12 @@ import { ActivatedRoute } from '@angular/router';
 export class ItemComponent implements OnInit {
 
   item!: any;
+
   constructor(private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.item=this.activatedRoute.snapshot.data['item'];
+
   }
 
 }

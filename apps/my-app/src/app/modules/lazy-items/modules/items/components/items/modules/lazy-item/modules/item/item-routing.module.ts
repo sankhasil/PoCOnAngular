@@ -11,7 +11,26 @@ const routes: Routes = [
   {
     path: '',
     component: ItemComponent,
-    resolve : {item : ItemResolver}
+    resolve : {item : ItemResolver},
+    children: [
+      {
+        path: 'edit',
+        loadChildren: ()=>import('./modules/lazy-item-edit/lazy-item-edit.module').then(m=> m.LazyItemEditModule)
+
+      },
+      {
+        path: 'delete',
+        loadChildren: ()=>import('./modules/lazy-item-delete/lazy-item-delete.module').then(m=> m.LazyItemDeleteModule)
+      },
+      {
+        path: 'view',
+        loadChildren: ()=>import('./modules/lazy-item-view/lazy-item-view.module').then(m=> m.LazyItemViewModule)
+      },
+      {
+        path: 'create',
+        loadChildren: ()=>import('./modules/lazy-item-create/lazy-item-create.module').then(m=> m.LazyItemCreateModule)
+      }
+    ]
   }
 
   ];

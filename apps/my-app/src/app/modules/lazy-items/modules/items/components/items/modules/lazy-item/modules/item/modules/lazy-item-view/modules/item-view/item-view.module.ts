@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ItemComponent } from './components/item/item.component';
+import { ItemViewComponent } from './components/item-view.component';
 import { RouterModule } from '@angular/router';
 
 
 
 @NgModule({
   declarations: [
-    ItemComponent
+    ItemViewComponent
   ],
   imports: [
     CommonModule,RouterModule
   ]
 })
-export class ItemModule { }
+export class ItemViewModule { }
