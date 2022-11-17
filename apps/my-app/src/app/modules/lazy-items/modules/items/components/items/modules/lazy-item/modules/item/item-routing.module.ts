@@ -24,7 +24,7 @@ const routes: Routes = [
       },
       {
         path: 'view',
-        loadChildren: ()=>import('./modules/lazy-item-view/lazy-item-view.module').then(m=> m.LazyItemViewModule)
+        loadChildren: ()=>import('./modules/lazy-item-view/lazy-view-edit.module').then(m=> m.LazyItemViewModule)
       },
       {
         path: 'create',

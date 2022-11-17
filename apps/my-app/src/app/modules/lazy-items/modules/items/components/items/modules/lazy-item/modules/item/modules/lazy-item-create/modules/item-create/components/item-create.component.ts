@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ItemService } from 'src/app/services/item.service';
+
+import { ItemsService } from 'src/app/services/items.service';
 
 @Component({
   selector: 'app-item-create',
@@ -10,18 +11,15 @@ import { ItemService } from 'src/app/services/item.service';
 export class ItemCreateComponent implements OnInit {
   item: any;
 
-  constructor(private itemService: ItemService, private router: Router) {}
+  constructor(private itemsService: ItemsService, private router: Router) {}
 
   ngOnInit(): void {}
   onSaveButtonClicked() {
-    this.itemService.createItem(this.item).subscribe(
-      (item: any) => {
-        this.router.navigate(['items']);
-      },
-      (error: any) => {
-        console.error(error);
-      }
-    );
+    this.itemsService.createItem(this.item).subscribe({
+      next: console.info,
+      error: console.error,
+      complete: () => this.router.navigate(['items']),
+    });
   }
   onCancelButtonClicked() {
     console.log('form cleared');

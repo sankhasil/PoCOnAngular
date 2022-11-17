@@ -16,6 +16,7 @@ export class ItemsResolver implements Resolve<any[]> {
 
   }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any[]> {
+    //TODO: resolver not called when delete or edit or in create
     return this.itemsService.getItems();
   }
 

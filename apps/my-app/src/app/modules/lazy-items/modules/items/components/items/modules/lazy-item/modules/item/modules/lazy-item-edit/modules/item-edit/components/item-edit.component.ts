@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
 
 @Component({
   selector: 'app-item-edit',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./item-edit.component.scss']
 })
 export class ItemEditComponent implements OnInit {
-
-  constructor() { }
+  item! : any
+  constructor(private activatedRouteSnapshot : ActivatedRouteSnapshot,private router : Router) { }
 
   ngOnInit(): void {
+    this.item = this.activatedRouteSnapshot.data['item'];
   }
+  onOkButtonClicked(){
 
+  }
+  onCancelButtonClicked(){
+
+  }
 }
